@@ -1,6 +1,7 @@
 package ma.hibernate;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import ma.hibernate.dao.PhoneDao;
 import ma.hibernate.dao.PhoneDaoImpl;
@@ -38,11 +39,11 @@ public class Main {
         phoneDao.create(samsung);
 
         Map<String, String[]> params = new HashMap<>();
-        params.put("СountryManufactured", new String[]{"China"});
+        params.put("CountryManufactured", new String[]{"China"});
         params.put("Maker", new String[]{"apple", "nokia", "samsung"});
         params.put("Color", new String[]{"white", "red"});
 
-        java.util.List<Phone> phones = phoneDao.findAll(params);
+        List<Phone> phones = phoneDao.findAll(params);
         System.out.println("Phones found by criteria: ");
         phones.forEach(System.out::println);
     }
